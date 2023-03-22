@@ -12,23 +12,24 @@ struct ContentView: View {
     
     var body: some View {
         TabView(selection: $selection) {
-            CardsView()
+            HomeView()
                 .tabItem {
-                    Label("Cards", systemImage: "creditcard.fill")
+                    Label("Home", systemImage: "house.fill")
                 }
                 .tag(0)
-            
             AddView()
                 .tabItem {
                     Label("Add", systemImage: "plus.square.fill")
                 }
                 .tag(1)
-            
-            HomeView()
+            CardsView()
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
+                    Label("Cards", systemImage: "creditcard.fill")
                 }
                 .tag(2)
+            
+            
+            
         }
     }
 }

@@ -14,10 +14,12 @@ struct HomeView: View {
         VStack(alignment: .leading, spacing: 10) {
             Text("Welcome back")
                 .font(.title2)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             Text(userName)
                 .font(.largeTitle)
                 .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .leading)
             
             Spacer()
         }

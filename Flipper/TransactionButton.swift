@@ -15,7 +15,13 @@ struct TransactionButton: View {
     
     var body: some View {
         Button(action: {
-            self.selectedType = self.type
+            if selectedType == type {
+                // unselect the button
+                selectedType = nil
+            } else {
+                // select the button
+                selectedType = type
+            }
         }) {
             HStack {
                 Text(type.rawValue.capitalized)
@@ -45,6 +51,7 @@ struct TransactionButton: View {
         }
     }
 }
+
 
 
 enum TransactionType: String {

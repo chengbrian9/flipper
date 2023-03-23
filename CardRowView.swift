@@ -16,7 +16,7 @@ struct CardRow: View {
             Image(card.image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: 100)
+                .frame(height: 200)
             Text(card.name)
                 .font(.headline)
         }

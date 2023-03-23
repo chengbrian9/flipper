@@ -50,7 +50,7 @@ struct AddView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: NextView(selectedType: selectedType), isActive: $isNextPagePresented) {
+                NavigationLink(destination: AddCardsView(selectedType: selectedType), isActive: $isNextPagePresented) {
                     EmptyView()
                 }
                 .hidden()
@@ -78,20 +78,32 @@ struct AddView: View {
     }
 }
 
-struct NextView: View {
+struct AddCardsView: View {
     
     let selectedType: TransactionType?
     
     var body: some View {
-        switch selectedType {
-        case .buy:
-            Text("Buy View")
-        case .sell:
-            Text("Sell View")
-        case .trade:
-            Text("Trade View")
-        case .none:
-            EmptyView()
+        VStack {
+            Text("Add cards to \(selectedType?.rawValue.capitalized ?? "")")
+                .font(.largeTitle)
+                .fontWeight(.bold)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 50)
+            
+            Spacer()
+            
+            switch selectedType {
+            case .buy:
+                Text("Add cards to buy view")
+            case .sell:
+                Text("Add cards to sell view")
+            case .trade:
+                Text("Add cards to trade view")
+            case .none:
+                EmptyView()
+            }
+            
+            Spacer()
         }
     }
 }

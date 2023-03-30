@@ -94,11 +94,11 @@ struct AddCardsView: View {
             
             switch selectedType {
             case .buy:
-                Text("Add cards to buy view")
+                EmptyCardsView()
             case .sell:
-                Text("Add cards to sell view")
+                EmptyCardsView()
             case .trade:
-                Text("Add cards to trade view")
+                EmptyCardsView()
             case .none:
                 EmptyView()
             }
@@ -107,3 +107,4 @@ struct AddCardsView: View {
         }
     }
 }
+
